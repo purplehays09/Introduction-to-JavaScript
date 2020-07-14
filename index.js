@@ -153,7 +153,7 @@ function feed(weight, age){
     return pounds;
 }
 
-feed(15,1)
+console.log(feed(15,1))
 
 
 
@@ -270,22 +270,23 @@ function getGrades(){
     let grades = [];
 
     while(unfinished === true){
-        unfinished = confirm("Do you have more grades to enter?");
         grades.push(Number(prompt("What is the number grade?")));
+        unfinished = confirm("Do you have more grades to enter?");
     }
+    return grades
 
 }
 
 function teacherAssistant(grades){
     let letterGrades = [];
-    for (grade in grades[grade]){
-        if (grade > 90){
+    for (let i = 0; i < grades.length; i++){
+        if (grades.i > 90){
             letterGrades.push('A');
-        }else if(grade > 80) {
+        }else if(grades.i > 80) {
             letterGrades.push('B');
-        }else if(grade > 70){
+        }else if(grades.i > 70){
             letterGrades.push('C');
-        }else if(grade > 60){
+        }else if(grades.i > 60){
             letterGrades.push('D');
         }else{
             letterGrades.push('F');
@@ -298,13 +299,13 @@ console.log(teacherAssistant(getGrades()))
 
 // simple way 
 function lettergrade(num){
-    if (grade > 90){
+    if (num > 90){
         return 'A'
-    }else if(grade > 80) {
+    }else if(num > 80) {
         return 'B'
-    }else if(grade > 70){
+    }else if(num > 70){
         return 'C'
-    }else if(grade > 60){
+    }else if(num > 60){
         return 'D'
     }else{
         return 'F'
