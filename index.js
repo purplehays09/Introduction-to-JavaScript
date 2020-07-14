@@ -1,158 +1,159 @@
-/************************************************************** Task 1: Warm-up! **************************************************************/
-//Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
+// /************************************************************** Task 1: Warm-up! **************************************************************/
+// //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
 
-let votingAge = 16;
+// console.log('hey you')
+// let votingAge = 16;
 
-if (votingAge < 18){
-    console.log(true);
-}else{
-    console.log(false);
-}
-
-
-
-//Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
+// if (votingAge < 18){
+//     console.log(true);
+// }else{
+//     console.log(false);
+// }
 
 
-let name = 'David';
-if (name.length() > 4){
-    name = 'Dave'
-}else{
-    name = 'David Hays';
-}
+
+// //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
 
 
-//Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
+// let name = 'David';
+// if (name.length > 4){
+//     name = 'Dave'
+// }else{
+//     name = 'David Hays';
+// }
 
 
-let year = '1999';
-year = Number(year);
+// //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
 
 
-//Task d: Write a function to multiply a*b 
+// let year = '1999';
+// year = Number(year);
 
 
-function mult(a,b){
-    return a*b;
-}
+// //Task d: Write a function to multiply a*b 
 
 
-/************************************************************** Task 2 **************************************************************/
-//Age in Dog years
-//write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years 
+// function mult(a,b){
+//     return a*b;
+// }
 
 
-function getAge(){
-    let age = prompt("What is your age?");
-    if (typeof Number(age) !== "number"){
-        while (typeof age !== 'number'){
-            age = prompt("Sorry, that wasn't a number, please try again!\nWhat is your age?");
-        }
-    }
-    return age;
-}
-
-function dogYears(age){
-    return age*7;
-}
-
-let dogAge = dogYears(getAge());
-
-console.log(dogAge);
+// /************************************************************** Task 2 **************************************************************/
+// //Age in Dog years
+// //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years 
 
 
-/************************************************************** Task 3 **************************************************************/
-//Dog feeder 
-//takes weight in pounds and age in years (note if the dog is a puppy the age will be a decimal) and returns the number of pounds of raw food to feed in a day.
+// function getAge(){
+//     let age = prompt("What is your age?");
+//     if (typeof Number(age) !== "number"){
+//         while (typeof Number(age) !== 'number'){
+//             age = prompt("Sorry, that wasn't a number, please try again!\nWhat is your age?");
+//         }
+//     }
+//     return age;
+// }
 
-function getDog(){
-    let name = prompt('What is your dogs name?')
-    let weight = Number(prompt('What is your dogs weight in pounds?'))
-    let age = getAge()
+// function dogYears(age){
+//     return age*7;
+// }
 
-    let dog = {
-        Name:name,
-        Weight:weight,
-        Age:age
-    }
-    return dog;
-}
+// let dogAge = dogYears(getAge());
 
-function months(years){
-    let numMonths = Math.floor(years * 12)
-}
+// console.log(dogAge);
 
-function feed(dog){
-    let pounds = 0;
 
-    if (dog.Age < 1){
-        let numMonths = months(dog.Age);
-        if (numMonths >= 7){
-            pounds = .04 * dog.Weight;
-        }else if(numMonths >= 4){
-            pounds = .05 * dog.Weight;
-        }else if(numMonths >= 2){
-            pounds = .1 * dog.Weight;
-        }else{
-            pounds = "we just don't know"
-        }
-    }else if(dog.Weight > 15){
-        pounds = .02 * dog.Weight;
-    }else if(dog.Weight >= 11){
-        pounds = .03 * dog.Weight;
-    }else if(dog.Weight >= 6){
-        pounds = .04 * dog.Weight;
-    }else{
-        pounds = .05 * dog.Weight;
-    }
-    return pounds;
-}
+// /************************************************************** Task 3 **************************************************************/
+// //Dog feeder 
+// //takes weight in pounds and age in years (note if the dog is a puppy the age will be a decimal) and returns the number of pounds of raw food to feed in a day.
 
-//feeding requirements
-// adult dogs at least 1 year 
-// up to 5 lbs - 5% of their body weight
-// 6 - 10 lbs - 4% of their body weight 
-// 11 - 15 lbs - 3% of their body weight 
-// > 15lbs - 2% of their body weight 
+// function getDog(){
+//     let name = prompt('What is your dogs name?')
+//     let weight = Number(prompt('What is your dogs weight in pounds?'))
+//     let age = getAge()
 
-// Puppies less than 1 year
-// 2 - 4 months 10% of their body weight
-// 4 - 7 months 5% of their body weight 
-// 7 - 12 months 4% of their body weight
+//     let dog = {
+//         Name:name,
+//         Weight:weight,
+//         Age:age
+//     }
+//     return dog;
+// }
 
-// when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
+// function months(years){
+//     let numMonths = Math.floor(years * 12)
+// }
+
+// function feed(dog){
+//     let pounds = 0;
+
+//     if (dog.Age < 1){
+//         let numMonths = months(dog.Age);
+//         if (numMonths >= 7){
+//             pounds = .04 * dog.Weight;
+//         }else if(numMonths >= 4){
+//             pounds = .05 * dog.Weight;
+//         }else if(numMonths >= 2){
+//             pounds = .1 * dog.Weight;
+//         }else{
+//             pounds = "we just don't know"
+//         }
+//     }else if(dog.Weight > 15){
+//         pounds = .02 * dog.Weight;
+//     }else if(dog.Weight >= 11){
+//         pounds = .03 * dog.Weight;
+//     }else if(dog.Weight >= 6){
+//         pounds = .04 * dog.Weight;
+//     }else{
+//         pounds = .05 * dog.Weight;
+//     }
+//     return pounds;
+// }
+
+// //feeding requirements
+// // adult dogs at least 1 year 
+// // up to 5 lbs - 5% of their body weight
+// // 6 - 10 lbs - 4% of their body weight 
+// // 11 - 15 lbs - 3% of their body weight 
+// // > 15lbs - 2% of their body weight 
+
+// // Puppies less than 1 year
+// // 2 - 4 months 10% of their body weight
+// // 4 - 7 months 5% of their body weight 
+// // 7 - 12 months 4% of their body weight
+
+// // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
   
-let dogFood = feed(getDog())
+// let dogFood = feed(getDog())
 
-// simple version
+// // simple version
 
-function feed(weight, age){
-    let pounds = 0;
+// function feed(weight, age){
+//     let pounds = 0;
 
-    if (years < 1){
-        let numMonths = months(age);
-        if (numMonths >= 7){
-            pounds = .04 * weight;
-        }else if(numMonths >= 4){
-            pounds = .05 * weight;
-        }else if(numMonths >= 2){
-            pounds = .1 * weight;
-        }else{
-            pounds = "we just don't know"
-        }
-    }else if(weight > 15){
-        pounds = .02 * weight;
-    }else if(weight >= 11){
-        pounds = .03 * weight;
-    }else if(weight >= 6){
-        pounds = .04 * weight;
-    }else{
-        pounds = .05 * weight;
-    }
-    return pounds;
-}
+//     if (age < 1){
+//         let numMonths = months(age);
+//         if (numMonths >= 7){
+//             pounds = .04 * weight;
+//         }else if(numMonths >= 4){
+//             pounds = .05 * weight;
+//         }else if(numMonths >= 2){
+//             pounds = .1 * weight;
+//         }else{
+//             pounds = "we just don't know"
+//         }
+//     }else if(weight > 15){
+//         pounds = .02 * weight;
+//     }else if(weight >= 11){
+//         pounds = .03 * weight;
+//     }else if(weight >= 6){
+//         pounds = .04 * weight;
+//     }else{
+//         pounds = .05 * weight;
+//     }
+//     return pounds;
+// }
 
-feed(15,1)
+// feed(15,1)
 
 
 
@@ -168,8 +169,8 @@ feed(15,1)
 
 function pick(){
     let selection = prompt("Do you pick Rock, Paper, or Scissors?");
-    if (selection !== "Rock" || "Paper" || "Scissors"){
-        while (selection !== "Rock" || "Paper" || "Scissors"){ 
+    if (!(selection === "Rock" || "Paper" || "Scissors")){
+        while (!(selection === "Rock" || "Paper" || "Scissors")){ 
             selection = prompt("No for reals, you have to ype exactly 'Rock' 'Paper' or 'Scissors'.\nSelect again!");
         }
     return selection;
@@ -242,14 +243,14 @@ function feetToCm(num){
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
   
 function annoyingSong(num){
-    for (i = num; i > 0; i--){
-        let current = num;
-        console.log(`${current} bottles of beer on the wall\n${current} bottles of beer`);
-        current --;
-        console.log(`take one down, pass it around\n${current} bottles of beer on the wall.`);
+    while (num > 0){
+        console.log(`${num} bottles of beer on the wall\n${num} bottles of beer`);
+        num --;
+        console.log(`take one down, pass it around\n${num} bottles of beer on the wall.`);
+       
     }
 }
-annoyingSong(99);
+annoyingSong(10);
 
 
 
@@ -290,14 +291,36 @@ function teacherAssistant(grades){
             letterGrades.push('F');
         }
     }
+    return letterGrades;
 }  
-  
+
+console.log(teacherAssistant(getGrades()))
+
+// simple way 
+function lettergrade(num){
+    if (grade > 90){
+        return 'A'
+    }else if(grade > 80) {
+        return 'B'
+    }else if(grade > 70){
+        return 'C'
+    }else if(grade > 60){
+        return 'D'
+    }else{
+        return 'F'
+    }
+}
+
+console.log(lettergrade(98))
 
 /************************************************************** Stretch **************************************************************/
 //Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels.
 // Hint - you may need to study tomorrow's traning kit on arrays 
 // try looking up the .includes() method
 
+// function vowelCount(string){
+//     for
+// }
 
 
 
